@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
   <meta property="og:title" content="Keter Global Intelligence & Security">
   <meta property="og:description" content="Strategic intelligence, security, geopolitical and economic advisory for governments and global enterprises.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="./assets/hero.png">
+  <meta property="og:image" content="./assets/logo.jpg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,18 @@
 </head>
 <body>
 
+  <!-- Network dot pattern SVG (hidden, referenced by CSS) -->
+  <svg width="0" height="0" style="position:absolute"><defs>
+    <pattern id="network-dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="currentColor" opacity="0.12"/>
+    </pattern>
+    <pattern id="network-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="30" r="1.2" fill="currentColor" opacity="0.15"/>
+      <line x1="30" y1="30" x2="60" y2="0" stroke="currentColor" stroke-width="0.3" opacity="0.06"/>
+      <line x1="30" y1="30" x2="0" y2="60" stroke="currentColor" stroke-width="0.3" opacity="0.06"/>
+    </pattern>
+  </defs></svg>
+
   <!-- SKIP LINK -->
   <a href="#main" class="sr-only" style="position:absolute;top:0;left:0;z-index:999;padding:1rem;background:var(--color-accent);color:#fff;">Skip to content</a>
 
@@ -35,11 +47,7 @@
   <header class="header" id="header">
     <div class="header__inner">
       <a href="#" class="header__logo" aria-label="Keter Global — Home">
-        <!-- SVG Logo: Crown / Keter symbol — geometric, minimal -->
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M20 4L26 14L34 10L30 20L36 26L26 24L20 36L14 24L4 26L10 20L6 10L14 14L20 4Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-          <circle cx="20" cy="20" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
-        </svg>
+        <img src="./assets/globe-mark.png" alt="" class="header__logo-mark" aria-hidden="true">
         <div class="header__logo-text">
           Keter Global
           <span data-i18n="nav.subtitle">Intelligence & Security</span>
@@ -50,6 +58,7 @@
         <div class="nav__links" id="navLinks">
           <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
           <a href="#services" class="nav__link" data-i18n="nav.services">Services</a>
+          <a href="#insights" class="nav__link" data-i18n="nav.insights">Insights</a>
           <a href="#regions" class="nav__link" data-i18n="nav.regions">Global Reach</a>
           <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
         </div>
@@ -80,8 +89,54 @@
         <div class="hero__overlay"></div>
       </div>
       <div class="hero__content">
-        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Strategic Intelligence &bull; Security &bull; Geopolitical Advisory</p>
-        <h1 class="hero__title" data-i18n="hero.title">Trusted Counsel for a Complex World</h1>
+        <!-- SVG globe + network woven into the hero -->
+        <div class="hero__globe" aria-hidden="true">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Globe wireframe -->
+            <circle cx="200" cy="200" r="120" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+            <!-- Latitude lines -->
+            <ellipse cx="200" cy="200" rx="120" ry="40" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            <ellipse cx="200" cy="200" rx="120" ry="80" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            <ellipse cx="200" cy="160" rx="105" ry="25" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+            <ellipse cx="200" cy="240" rx="105" ry="25" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+            <!-- Longitude lines -->
+            <ellipse cx="200" cy="200" rx="40" ry="120" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            <ellipse cx="200" cy="200" rx="80" ry="120" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            <ellipse cx="200" cy="200" rx="110" ry="120" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+            <!-- Network connection lines -->
+            <line x1="80" y1="200" x2="30" y2="130" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            <line x1="320" y1="200" x2="370" y2="140" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            <line x1="200" y1="80" x2="160" y2="30" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            <line x1="320" y1="200" x2="380" y2="260" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            <line x1="80" y1="200" x2="20" y2="270" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            <line x1="140" y1="100" x2="60" y2="60" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
+            <line x1="260" y1="100" x2="340" y2="50" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
+            <line x1="260" y1="300" x2="350" y2="350" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
+            <line x1="140" y1="300" x2="50" y2="340" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
+            <!-- Network dots (highlighted) -->
+            <circle cx="80" cy="200" r="4.5" fill="currentColor" opacity="0.85"/>
+            <circle cx="320" cy="200" r="4.5" fill="currentColor" opacity="0.85"/>
+            <circle cx="200" cy="80" r="4.5" fill="currentColor" opacity="0.85"/>
+            <circle cx="200" cy="320" r="4" fill="currentColor" opacity="0.7"/>
+            <circle cx="140" cy="100" r="3.5" fill="currentColor" opacity="0.75"/>
+            <circle cx="260" cy="100" r="3.5" fill="currentColor" opacity="0.75"/>
+            <circle cx="260" cy="300" r="3.5" fill="currentColor" opacity="0.75"/>
+            <circle cx="140" cy="300" r="3.5" fill="currentColor" opacity="0.75"/>
+            <!-- Outer network dots -->
+            <circle cx="30" cy="130" r="3" fill="currentColor" opacity="0.6"/>
+            <circle cx="370" cy="140" r="3" fill="currentColor" opacity="0.6"/>
+            <circle cx="160" cy="30" r="3" fill="currentColor" opacity="0.6"/>
+            <circle cx="380" cy="260" r="3" fill="currentColor" opacity="0.6"/>
+            <circle cx="20" cy="270" r="3" fill="currentColor" opacity="0.6"/>
+            <circle cx="60" cy="60" r="2.5" fill="currentColor" opacity="0.5"/>
+            <circle cx="340" cy="50" r="2.5" fill="currentColor" opacity="0.5"/>
+            <circle cx="350" cy="350" r="2.5" fill="currentColor" opacity="0.5"/>
+            <circle cx="50" cy="340" r="2.5" fill="currentColor" opacity="0.5"/>
+            <!-- Sparkle accent -->
+            <path d="M360 80 L364 70 L368 80 L364 90Z" fill="currentColor" opacity="0.6"/>
+          </svg>
+        </div>
+        <h1 class="hero__title" data-i18n="hero.eyebrow">Strategic Intelligence &bull; Security &bull; Geopolitical & Economic Advisory</h1>
         <p class="hero__subtitle" data-i18n="hero.subtitle">Keter Global delivers intelligence, security, geopolitical strategy, and economic advisory to governments, multinational corporations, and sovereign entities operating in high-risk environments across the Americas, the Middle East, and Europe.</p>
         <a href="#contact" class="hero__cta" data-i18n="hero.cta">Request a Consultation</a>
       </div>
@@ -90,6 +145,7 @@
 
     <!-- ABOUT -->
     <section class="section about" id="about">
+      <div class="network-bg" aria-hidden="true"></div>
       <div class="section__inner">
         <p class="section__eyebrow" data-i18n="about.eyebrow">About the Firm</p>
         <h2 class="section__title" data-i18n="about.title">Three Decades of Strategic Expertise</h2>
@@ -136,7 +192,7 @@
           <div class="service-card fade-in">
             <i data-lucide="shield" class="service-card__icon"></i>
             <h3 class="service-card__title" data-i18n="svc.intel.title">Intelligence & Special Operations Advisory</h3>
-            <p class="service-card__desc" data-i18n="svc.intel.desc">Strategic intelligence collection, threat assessment, counter-terrorism, and special operations advisory leveraging advanced OSINT methodologies and technology platforms.</p>
+            <p class="service-card__desc" data-i18n="svc.intel.desc">Strategic intelligence collection, threat assessment, counter-terrorism, and special operations advisory leveraging advanced methodologies and technology platforms.</p>
           </div>
 
           <div class="service-card fade-in">
@@ -173,8 +229,101 @@
       </div>
     </section>
 
+    <!-- INSIGHTS: Papers & Podcasts -->
+    <section class="section insights" id="insights">
+      <div class="section__inner">
+        <p class="section__eyebrow" data-i18n="insights.eyebrow">Insights</p>
+        <h2 class="section__title" data-i18n="insights.title">Research & Analysis</h2>
+        <p class="section__desc" data-i18n="insights.desc">Explore our latest publications, policy papers, and podcast episodes on geopolitical strategy, security, and economic intelligence.</p>
+
+        <!-- Tab Navigation -->
+        <div class="insights__tabs" role="tablist">
+          <button class="insights__tab active" role="tab" aria-selected="true" data-tab="papers" data-i18n="insights.tab.papers">Papers</button>
+          <button class="insights__tab" role="tab" aria-selected="false" data-tab="podcasts" data-i18n="insights.tab.podcasts">Podcasts</button>
+        </div>
+
+        <!-- Papers Panel -->
+        <div class="insights__panel active" id="panel-papers" role="tabpanel">
+          <div class="insights__grid insights__grid--4">
+
+            <a href="./assets/papers/Gulf-Israel-Infrastructure-Investment-Analysis.pdf" target="_blank" class="insight-card insight-card--link fade-in">
+              <div class="insight-card__type"><i data-lucide="file-text" style="width:14px;height:14px;"></i> <span data-i18n="insights.label.paper">Intelligence Brief</span></div>
+              <h3 class="insight-card__title">Gulf-Israel Infrastructure Investment Analysis</h3>
+              <p class="insight-card__meta">March 2026 &bull; 24 pages</p>
+              <p class="insight-card__excerpt">Strategic decision framework for Middle East connectivity capital deployment — pipeline vs. IMEC rail corridor economics, DFC positioning, and hybrid phased investment strategy.</p>
+              <span class="insight-card__download"><i data-lucide="download" style="width:14px;height:14px;"></i> Download PDF</span>
+            </a>
+
+            <a href="./assets/papers/Iran-Conflict-Scenarios-Supplement.pdf" target="_blank" class="insight-card insight-card--link fade-in">
+              <div class="insight-card__type"><i data-lucide="file-text" style="width:14px;height:14px;"></i> <span data-i18n="insights.label.paper">Supplemental Analysis</span></div>
+              <h3 class="insight-card__title">Iran Conflict Scenarios: Infrastructure Investment Impact Assessment</h3>
+              <p class="insight-card__meta">March 2026 &bull; 13 pages</p>
+              <p class="insight-card__excerpt">Scenario-driven assessment of how two distinct Iran conflict outcomes would reshape pipeline and IMEC rail corridor investment calculus — Hormuz dynamics, oil prices, and normalization timelines.</p>
+              <span class="insight-card__download"><i data-lucide="download" style="width:14px;height:14px;"></i> Download PDF</span>
+            </a>
+
+            <a href="./assets/papers/IRAN-Hizballahelimination.pdf" target="_blank" class="insight-card insight-card--link fade-in">
+              <div class="insight-card__type"><i data-lucide="file-text" style="width:14px;height:14px;"></i> <span data-i18n="insights.label.paper">Executive Assessment</span></div>
+              <h3 class="insight-card__title">Systematic Elimination of Iranian & Hezbollah Leadership Architecture</h3>
+              <p class="insight-card__meta">March 2026 &bull; 23 pages</p>
+              <p class="insight-card__excerpt">Strategic impact assessment on nuclear, ballistic missile, and internal security structures of the Islamic Republic following leadership decapitation campaigns.</p>
+              <span class="insight-card__download"><i data-lucide="download" style="width:14px;height:14px;"></i> Download PDF</span>
+            </a>
+
+            <a href="./assets/papers/Iran-venezuelaintelligence_report.pdf" target="_blank" class="insight-card insight-card--link fade-in">
+              <div class="insight-card__type"><i data-lucide="file-text" style="width:14px;height:14px;"></i> <span data-i18n="insights.label.paper">Intelligence Assessment</span></div>
+              <h3 class="insight-card__title">The Iranian Strategic Architecture in Latin America</h3>
+              <p class="insight-card__meta">March 2026 &bull; 22 pages</p>
+              <p class="insight-card__excerpt">Proxy networks, military proliferation, and the nuclear threshold hypothesis — comprehensive assessment of Iranian strategic penetration in the Western Hemisphere.</p>
+              <span class="insight-card__download"><i data-lucide="download" style="width:14px;height:14px;"></i> Download PDF</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Podcasts Panel -->
+        <div class="insights__panel" id="panel-podcasts" role="tabpanel">
+          <div class="insights__grid">
+
+            <article class="insight-card insight-card--podcast fade-in">
+              <div class="insight-card__type"><i data-lucide="mic" style="width:14px;height:14px;"></i> <span data-i18n="insights.label.podcast">Podcast</span></div>
+              <h3 class="insight-card__title">Why Rail Beats the Gulf-Israel Pipeline</h3>
+              <p class="insight-card__meta">March 2026 &bull; 51 min</p>
+              <p class="insight-card__excerpt">Analysis of IMEC rail corridor economics vs. a dedicated Gulf-Israel oil pipeline — comparing capital deployment strategies, political dependencies, and investment timelines for Middle East connectivity infrastructure.</p>
+              <audio controls preload="none" class="insight-card__audio">
+                <source src="./assets/podcasts/why-rail-beats-pipeline.mp3" type="audio/mpeg">
+              </audio>
+            </article>
+
+            <article class="insight-card insight-card--podcast fade-in">
+              <div class="insight-card__type"><i data-lucide="mic" style="width:14px;height:14px;"></i> <span data-i18n="insights.label.podcast">Podcast</span></div>
+              <h3 class="insight-card__title">Iran's Nuclear Threshold in Venezuela</h3>
+              <p class="insight-card__meta">March 2026 &bull; 46 min</p>
+              <p class="insight-card__excerpt">Deep dive into Iranian strategic penetration in Latin America — proxy networks, military proliferation, and the nuclear threshold hypothesis for deterrent-grade power projection from Venezuelan territory.</p>
+              <audio controls preload="none" class="insight-card__audio">
+                <source src="./assets/podcasts/iran-nuclear-threshold-venezuela.mp3" type="audio/mpeg">
+              </audio>
+            </article>
+
+            <article class="insight-card insight-card--podcast fade-in">
+              <div class="insight-card__type"><i data-lucide="mic" style="width:14px;height:14px;"></i> <span data-i18n="insights.label.podcast">Podcast</span></div>
+              <h3 class="insight-card__title">Dismantling the Iranian Deterrence Triad</h3>
+              <p class="insight-card__meta">March 2026 &bull; 19 min</p>
+              <p class="insight-card__excerpt">Strategic impact assessment of the systematic elimination of Iranian and Hezbollah leadership architecture — effects on nuclear, ballistic missile, and internal security structures of the Islamic Republic.</p>
+              <audio controls preload="none" class="insight-card__audio">
+                <source src="./assets/podcasts/dismantling-iranian-deterrence-triad.mp3" type="audio/mpeg">
+              </audio>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- REGIONS -->
     <section class="section regions" id="regions">
+      <div class="network-bg" aria-hidden="true"></div>
       <div class="section__inner">
         <p class="section__eyebrow" data-i18n="regions.eyebrow">Global Reach</p>
         <h2 class="section__title" data-i18n="regions.title">Operating Across Strategic Geographies</h2>
@@ -211,7 +360,7 @@
               <span data-i18n="contact.languages">English &bull; Spanish &bull; Hebrew &bull; Portuguese</span>
             </div>
           </div>
-          <form class="contact__form fade-in" onsubmit="handleSubmit(event)">
+          <form class="contact__form fade-in" action="https://formspree.io/f/info@keterintelligence.com" method="POST">
             <div class="form-group">
               <label for="name" data-i18n="form.name">Name</label>
               <input type="text" id="name" name="name" required autocomplete="name">
@@ -242,10 +391,7 @@
   <footer class="footer">
     <div class="footer__inner">
       <a href="#" class="footer__logo" aria-label="Keter Global">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M20 4L26 14L34 10L30 20L36 26L26 24L20 36L14 24L4 26L10 20L6 10L14 14L20 4Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-          <circle cx="20" cy="20" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
-        </svg>
+        <img src="./assets/globe-mark.png" alt="" class="footer__logo-img" aria-hidden="true">
         <span class="footer__logo-text">Keter Global</span>
       </a>
       <p class="footer__copy">&copy; 2026 Keter Global Intelligence & Security. <span data-i18n="footer.rights">All rights reserved.</span></p>
