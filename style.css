@@ -209,7 +209,7 @@ a:hover { color: var(--color-accent-hover); }
   text-transform: uppercase;
 }
 
-.nav { display: flex; align-items: center; gap: var(--space-6); }
+.nav { display: flex; align-items: center; gap: var(--space-8); }
 .nav__link {
   font-size: var(--text-sm);
   font-weight: 500;
