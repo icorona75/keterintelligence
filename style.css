@@ -307,7 +307,7 @@ a:hover { color: var(--color-accent-hover); }
   z-index: 1;
   max-width: var(--content-wide);
   margin: 0 auto;
-  padding: var(--space-16) var(--space-6) var(--space-2);
+  padding: var(--space-16) var(--space-6) var(--space-6);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -378,18 +378,19 @@ a:hover { color: var(--color-accent-hover); }
   margin-bottom: var(--space-8);
   line-height: 1.7;
   letter-spacing: 0.02em;
-  text-shadow: none;
-  background: oklch(0.96 0.01 60 / 0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  text-shadow: 0 1px 3px oklch(1 0 0 / 0.3);
+  background: oklch(0.97 0.005 60 / 0.40);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: var(--space-4) var(--space-6);
   border-radius: var(--radius-md);
-  border: 1px solid oklch(1 0 0 / 0.15);
+  border: 1px solid oklch(1 0 0 / 0.08);
+  margin-bottom: 0;
 }
 @media (max-width: 768px) {
   .hero__subtitle {
     font-size: var(--text-xs);
-    margin-bottom: var(--space-4);
+    margin-bottom: 0;
     padding: var(--space-3) var(--space-4);
   }
   .hero__content {
