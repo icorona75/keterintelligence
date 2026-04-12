@@ -322,8 +322,8 @@ a:hover { color: var(--color-accent-hover); }
 .hero__globe {
   position: absolute;
   left: -2%;
-  top: 50%;
-  transform: translateY(-52%);
+  top: 58%;
+  transform: translateY(-45%);
   width: 44vw;
   max-width: 560px;
   min-width: 300px;
