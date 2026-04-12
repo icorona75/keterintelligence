@@ -336,6 +336,8 @@ a:hover { color: var(--color-accent-hover); }
   .hero__globe {
     width: 55vw;
     left: -5%;
+    top: 60%;
+    transform: translateY(-40%);
     opacity: 0.25;
   }
 }
